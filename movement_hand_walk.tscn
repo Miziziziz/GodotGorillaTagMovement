@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctwfhsr53boeg"]
+
+[ext_resource type="Script" path="res://movement_hand_walk.gd" id="1_w7663"]
+
+[node name="XRToolsMovementHandWalk" type="Node" groups=["movement_providers"]]
+script = ExtResource("1_w7663")
+fling_multiplier = 1.0

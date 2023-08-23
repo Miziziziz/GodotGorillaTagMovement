@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgncgj4b56r52"]
+
+[ext_resource type="Script" path="res://xr_tools_hand_pusher.gd" id="1_qdl4p"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vnqtu"]
+radius = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbl2m"]
+albedo_color = Color(0.160784, 0.890196, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_suyv1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6rs5"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="XRToolsHandPusher" type="CharacterBody3D"]
+top_level = true
+collision_layer = 0
+floor_snap_length = 0.0
+script = ExtResource("1_qdl4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vnqtu")
+
+[node name="NotColliding" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kbl2m")
+mesh = SubResource("SphereMesh_suyv1")
+
+[node name="Colliding" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_r6rs5")
+mesh = SubResource("SphereMesh_suyv1")
